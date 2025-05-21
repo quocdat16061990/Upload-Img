@@ -6,9 +6,9 @@ import puppeteer from 'puppeteer'; // Import Puppeteer
 export class CloudinaryService {
   constructor() {
     cloudinary.v2.config({
-      cloud_name: 'dx1lxjvdm',
-      api_key: '417131474316532',
-      api_secret: 'SdxZq2tpnD0KvUvizxO6kZ6yLyY',
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY,
+      api_secret: process.env.CLOUDINARY_API_SECRET,
     });
   }
 
