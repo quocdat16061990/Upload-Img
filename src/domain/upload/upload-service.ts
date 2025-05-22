@@ -16,7 +16,7 @@ export class CloudinaryService {
   async captureScreenshotFromUrl(url: string): Promise<string> {
     // Chạy Puppeteer để mở trang và chụp ảnh màn hình
     const browser = await puppeteer.launch({
-  executablePath: puppeteer.executablePath()
+     executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
 });
 
     const page = await browser.newPage();
