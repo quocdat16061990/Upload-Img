@@ -15,13 +15,13 @@ async function bootstrap() {
         .addTag('upload')
         .build();
     app.enableCors({
-        origin: ['http://localhost:5678', 'http://host.docker.internal:5678'],
+        origin: ['*'],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         credentials: true,
     });
     const document = swagger_1.SwaggerModule.createDocument(app, config);
     swagger_1.SwaggerModule.setup('api', app, document);
-    await app.listen(port);
+    await app.listen(port, '0.0.0.0');
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

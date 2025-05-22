@@ -15,9 +15,7 @@ export class CloudinaryService {
   // Thêm chức năng chụp ảnh màn hình từ URL và upload lên Cloudinary
   async captureScreenshotFromUrl(url: string): Promise<string> {
     // Chạy Puppeteer để mở trang và chụp ảnh màn hình
-     const browser = await puppeteer.launch({
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],  // Thêm cờ này để Puppeteer chạy trong Docker
-    });
+     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'networkidle2' }); // Đảm bảo trang đã tải xong
     const screenshotBuffer = await page.screenshot();  // Chụp ảnh trang web mà không định dạng cụ thể
