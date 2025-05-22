@@ -22,10 +22,10 @@ let CloudinaryService = class CloudinaryService {
         });
     }
     async captureScreenshotFromUrl(url) {
+        23;
         const browser = await puppeteer_1.default.launch({
-            executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-            args: ['--no-sandbox', '--disable-setuid-sandbox'],
-            headless: true,
+            headless: false,
+            args: ["--no-sandbox"]
         });
         const page = await browser.newPage();
         await page.goto(url, { waitUntil: 'networkidle2' });
