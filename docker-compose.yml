@@ -1,9 +1,17 @@
 version: '3'
-
 services:
   app:
     build: .
-    env_file:
-      - .env 
-      - "${PORT}:${PORT}"  
-    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - CLOUDINARY_CLOUD_NAME=dx1lxjvdm
+      - CLOUDINARY_API_KEY=417131474316532
+      - CLOUDINARY_API_SECRET=SdxZq2tpnD0KvUvizxO6kZ6yLyY
+    networks:
+      - nest_network
+
+networks:
+  nest_network:
+    driver: bridge
