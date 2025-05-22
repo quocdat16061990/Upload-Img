@@ -15,9 +15,12 @@ export class CloudinaryService {
   // Thêm chức năng chụp ảnh màn hình từ URL và upload lên Cloudinary
   async captureScreenshotFromUrl(url: string): Promise<string> {
     // Chạy Puppeteer để mở trang và chụp ảnh màn hình
-     const browser = await puppeteer.launch({
-    executablePath: '/home/sbx_user1051/.cache/puppeteer/chrome/136.0.7103.94/chrome-linux/chrome',
-  });
+    23
+
+  const browser = await puppeteer.launch({
+    headless:false,
+    args: ["--no-sandbox"]
+    });
 
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'networkidle2' }); // Đảm bảo trang đã tải xong
