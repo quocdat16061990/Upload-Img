@@ -18,9 +18,8 @@ export class CloudinaryService {
     23
 
   const browser = await puppeteer.launch({
-    headless:false,
-    args: ["--no-sandbox"]
-    });
+      executablePath: '/home/sbx_user1051/.cache/puppeteer/chrome/136.0.7103.94/chrome-linux/chrome', // Đường dẫn cụ thể đến Chrome
+    })
 
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'networkidle2' }); // Đảm bảo trang đã tải xong
